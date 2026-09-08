@@ -11,18 +11,41 @@ void printMenu() {
     cout << "\t4. Exit" << endl;
     cout << "Your Selection: ";
 }
-void factorial() {
-    //Code for the Factorial choice
+void factorial(float& N, float& i) {
+    //Prompts value entry for n
+    cout << "Please enter the value for 'n': ";
+    cin >> N;
+
+    unsigned long long factorial = 1; //allows more memory for long results
+
+    //Loop for when N is a negative number, requesting the input be positive
+    while (N < 0) {
+        cout << "Please enter a positive value for 'n': ";
+        cin >> N;
+    }
+    // Shows N = N in cases where N is 0 or one, since 0! and 1! equal 1.
+    if (N == 0 || N == 1){
+        cout << N << "! = 1" << endl;
+    }
+    else if (N > 1){
+        //Loop to multiply numbers 1 to n
+        for (int i = 1; i <= N; ++i){
+            factorial *= i;
+        }
+        cout << N << "! = " << factorial << endl;
+    }
 }
-void arithmetic() {
+void arithmetic() {}
     //Code for the Arithmetic choice
-}
-void geometric() {
+
+void geometric() {}
     //Code for the Geometric choice
-}
+
 int main(){
     int choice;
     char again;
+    float N;
+    float i;
 
     do {
         //Creates the menu on startup, and allows the user to input a chosen variable.
@@ -36,7 +59,7 @@ int main(){
 
         //Runs factorial code when value 1 is put into the choice selector
         else if (choice == 1) {
-            factorial();
+            factorial(N, i);
         }
         //Runs arithmetic code when value 2 is put into the choice selector
         else if (choice == 2) {
