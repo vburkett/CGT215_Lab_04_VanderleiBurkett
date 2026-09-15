@@ -12,6 +12,8 @@ void printMenu() {
     cout << "Your Selection: ";
 }
 void factorial(float& N) {
+    cout << "Factorial:" << endl;
+
     //Prompts value entry for n
     cout << "Please enter the value for 'n': ";
     cin >> N;
@@ -31,8 +33,23 @@ void factorial(float& N) {
         cout << N << "! = " << factorial << endl;
     }
 }
-void arithmetic() {}
-    //Code for the Arithmetic choice
+void arithmetic(float& a, float& b, float& c) {
+    cout << "Arithmetic Series: " << endl;
+
+    //data entry prompts
+    cout << "Please enter the difference for the series: ";
+    cin >> a;
+    cout << "Please enter the starting number for the series: ";
+    cin >> b;
+    cout << "How many elements would you like in the series? Please enter here: ";
+    cin >> c;
+
+    //loop that ensures the number of elements is not negative
+    while (c < 0) {
+        cout << "Please enter a positive value for the number of elements: ";
+        cin >> c;
+    }
+}
 
 void geometric() {}
     //Code for the Geometric choice
@@ -42,6 +59,9 @@ int main(){
     char again;
     float N;
     float i;
+    float a;
+    float b;
+    float c;
 
     do {
         //Creates the menu on startup, and allows the user to input a chosen variable.
@@ -59,7 +79,7 @@ int main(){
         }
         //Runs arithmetic code when value 2 is put into the choice selector
         else if (choice == 2) {
-            arithmetic();
+            arithmetic(a ,b ,c);
         }
         //Runs geometric code when value 3 is put into the choice selector
         else if (choice == 3) {
