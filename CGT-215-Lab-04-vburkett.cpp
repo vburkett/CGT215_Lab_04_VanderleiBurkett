@@ -11,7 +11,7 @@ void printMenu() {
     cout << "\t4. Exit" << endl;
     cout << "Your Selection: ";
 }
-void factorial(float& N, float& i) {
+void factorial(float& N) {
     //Prompts value entry for n
     cout << "Please enter the value for 'n': ";
     cin >> N;
@@ -23,11 +23,7 @@ void factorial(float& N, float& i) {
         cout << "Please enter a positive value for 'n': ";
         cin >> N;
     }
-    // Shows N = N in cases where N is 0 or one, since 0! and 1! equal 1.
-    if (N == 0 || N == 1){
-        cout << N << "! = 1" << endl;
-    }
-    else if (N > 1){
+    if (N >= 0){
         //Loop to multiply numbers 1 to n
         for (int i = 1; i <= N; ++i){
             factorial *= i;
@@ -59,7 +55,7 @@ int main(){
 
         //Runs factorial code when value 1 is put into the choice selector
         else if (choice == 1) {
-            factorial(N, i);
+            factorial(N);
         }
         //Runs arithmetic code when value 2 is put into the choice selector
         else if (choice == 2) {
