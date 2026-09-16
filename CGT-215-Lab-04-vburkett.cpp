@@ -83,8 +83,23 @@ void arithmetic(float& a, float& b, float& c) {
     }
 }
 
-void geometric() {}
-    //Code for the Geometric choice
+void geometric(float&a, float& r, float& m) {
+    cout << "Geometric Series: " << endl;
+
+    //establish initial input values
+    cout << "Enter you starting number: ";
+    cin >> a;
+    cout << "Enter a number to multiply by each time: ";
+    cin >> r;
+    cout << "Enter the number of elements in the series: ";
+    cin >> m;
+
+    //loop that ensures the number of elements is not negative
+    while (m < 0) {
+        cout << "Please enter a positive value for the number of elements: ";
+        cin >> m;
+    }
+}
 
 int main(){
     int choice;
@@ -94,6 +109,8 @@ int main(){
     float a;
     float b;
     float c;
+    float r;
+    float m;
 
     do {
         //Creates the menu on startup, and allows the user to input a chosen variable.
@@ -115,7 +132,7 @@ int main(){
         }
         //Runs geometric code when value 3 is put into the choice selector
         else if (choice == 3) {
-            geometric();
+            geometric(a, r, m);
         }
         
         //Asks the user whether they want to do another process, and allows them to choose to do so or exit.
