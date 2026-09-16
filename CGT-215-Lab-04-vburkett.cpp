@@ -86,6 +86,10 @@ void arithmetic(float& a, float& b, float& c) {
 void geometric(float&a, float& r, float& m) {
     cout << "Geometric Series: " << endl;
 
+    float geometrictotal;
+    float geotempvaluestore;
+    int powerstore;
+
     //establish initial input values
     cout << "Enter you starting number: ";
     cin >> a;
@@ -98,6 +102,29 @@ void geometric(float&a, float& r, float& m) {
     while (m < 0) {
         cout << "Please enter a positive value for the number of elements: ";
         cin >> m;
+    }
+    //sets up the first number in the series
+    geometrictotal = a;
+    cout << a << " + ";
+    m = (m - 1);
+    powerstore = 1;
+    
+    //Creates the main loop of the program
+    while (m > 1) {
+        geotempvaluestore = a * (pow(r, powerstore));
+        cout << geotempvaluestore << " + ";
+        geometrictotal = (geometrictotal + geotempvaluestore);
+        powerstore = (powerstore + 1);
+        m = (m - 1);
+    }
+    //Calculates the end of the program
+    if (m = 1) {
+        geotempvaluestore = a * (pow(r, powerstore));
+        cout << geotempvaluestore << " = ";
+        geometrictotal = (geometrictotal + geotempvaluestore);
+        powerstore = (powerstore + 1);
+        m = (m - 1);
+        cout << geometrictotal << endl;
     }
 }
 
