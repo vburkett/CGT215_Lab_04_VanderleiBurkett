@@ -36,6 +36,11 @@ void factorial(float& N) {
 void arithmetic(float& a, float& b, float& c) {
     cout << "Arithmetic Series: " << endl;
 
+    //setup for placeholder variables
+    int arithmetictotal;
+    int previousb;
+
+
     //data entry prompts
     cout << "Please enter the difference for the series: ";
     cin >> a;
@@ -48,6 +53,28 @@ void arithmetic(float& a, float& b, float& c) {
     while (c < 0) {
         cout << "Please enter a positive value for the number of elements: ";
         cin >> c;
+    }
+    if (c >= 0){
+        //loops the addition and prints it alongside a +
+        while (c > 1) {
+            cout << b << " + ";
+            arithmetictotal = (arithmetictotal + b);
+            previousb = arithmetictotal;
+            b = (a + b);
+            c = (c - 1);
+        }
+        //removes the + when printing the last value
+        if (c == 1) {
+            cout << b;
+            arithmetictotal = (arithmetictotal + b);
+            previousb = arithmetictotal;
+            b = (a + b);
+            c = (c - 1);
+        }
+        //prints the total when the process is finished
+        if (c == 0) {
+            cout << " = " << arithmetictotal << endl;
+        }
     }
 }
 
