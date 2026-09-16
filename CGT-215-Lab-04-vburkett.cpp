@@ -26,11 +26,16 @@ void factorial(float& N) {
         cin >> N;
     }
     if (N >= 0){
+        cout << N << "! = ";
         //Loop to multiply numbers 1 to n
         for (int i = 1; i <= N; ++i){
+            cout << i;
             factorial *= i;
+            if (i < N) {
+                cout << " * ";
+            }
         }
-        cout << N << "! = " << factorial << endl;
+        cout << " = " << factorial << endl;
     }
 }
 void arithmetic(float& a, float& b, float& c) {
